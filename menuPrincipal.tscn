@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dv7k4jg1c5ofm"]
+[gd_scene load_steps=2 format=3 uid="uid://dv7k4jg1c5ofm"]
+
+[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/DALL·E 2025-03-27 17.11.29 - A powerful werewolf named Fernando stands in a dark, misty forest under a full moon. His thick fur is dark with silver streaks on his back and face, g.webp" id="1_3sc8a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +9,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Dall·e2025-03-2717_11_29-APowerfulWerewolfNamedFernandoStandsInADark,MistyForestUnderAFullMoon_HisThickFurIsDarkWithSilverStreaksOnHisBackAndFace,G" type="Sprite2D" parent="."]
+position = Vector2(580, 393)
+scale = Vector2(0.823242, 0.486328)
+texture = ExtResource("1_3sc8a")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
