@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfxj8vjesif61"]
+
+[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_bpi8g"]
+
+[node name="Juego" type="Node2D"]
+
+[node name="Hombrelobo" type="Sprite2D" parent="."]
+position = Vector2(523, 323)
+scale = Vector2(0.481445, 0.421875)
+texture = ExtResource("1_bpi8g")

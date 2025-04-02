@@ -1,18 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv7k4jg1c5ofm"]
+[gd_scene load_steps=3 format=3 uid="uid://dv7k4jg1c5ofm"]
 
-[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_3sc8a"]
+[ext_resource type="Texture2D" uid="uid://ccutktreyug81" path="res://fotosPrueba1/fotoportada.png" id="1_3sc8a"]
+[ext_resource type="Script" uid="uid://cvolq4n0mj5dw" path="res://Scripts/menu_principal.gd" id="1_i1nop"]
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i1nop")
 
-[node name="Dall·e2025-03-2717_11_29-APowerfulWerewolfNamedFernandoStandsInADark,MistyForestUnderAFullMoon_HisThickFurIsDarkWithSilverStreaksOnHisBackAndFace,G" type="Sprite2D" parent="."]
-position = Vector2(580, 393)
-scale = Vector2(0.823242, 0.486328)
+[node name="Fotoportada" type="Sprite2D" parent="."]
+position = Vector2(560, 346)
 texture = ExtResource("1_3sc8a")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -20,10 +21,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 265.0
+offset_top = 257.0
+offset_right = 263.0
+offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.544918, 0.517616)
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1150, 650)
 layout_mode = 2
 
@@ -43,17 +50,30 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Jugar" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "Jugar"
 
-[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Asincronico" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "Asincronia"
 
-[node name="Button3" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Configuracion" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "Configuracion"
+
+[node name="Salir" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Asincronico" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Asincronico" to="." method="_on_asincronico_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Configuracion" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Salir" to="." method="_on_salir_pressed"]
