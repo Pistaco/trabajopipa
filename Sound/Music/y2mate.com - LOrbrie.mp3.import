@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cctmyfjllvv3h"
+path="res://.godot/imported/y2mate.com - LOrbrie.mp3-249e07ba5ba6ecddfbc16cefe98f9f83.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/y2mate.com - LOrbrie.mp3"
+dest_files=["res://.godot/imported/y2mate.com - LOrbrie.mp3-249e07ba5ba6ecddfbc16cefe98f9f83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
