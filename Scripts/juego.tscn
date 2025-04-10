@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfxj8vjesif61"]
+[gd_scene load_steps=4 format=3 uid="uid://cfxj8vjesif61"]
 
 [ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_bpi8g"]
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_hblkt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hblkt"]
+resource_local_to_scene = true
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_hblkt")
 
 [node name="Hombrelobo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(523, 323)
 scale = Vector2(0.481445, 0.421875)
 texture = ExtResource("1_bpi8g")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 468.0
 offset_top = 458.0
 offset_right = 700.0
@@ -21,5 +26,10 @@ offset_bottom = 563.0
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "Volver"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hblkt")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [connection signal="pressed" from="VBoxContainer2/Volver" to="." method="_on_volver_pressed"]
