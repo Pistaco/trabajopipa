@@ -1,69 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd40l4j7j1onf"]
+[gd_scene load_steps=4 format=3 uid="uid://cd40l4j7j1onf"]
 
-[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_bpi8g"]
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_hblkt"]
-[ext_resource type="Texture2D" uid="uid://s65xh3tv66p1" path="res://fotosPrueba1/Rocky Roads/Objects/apple.png" id="4_ubyp4"]
-[ext_resource type="Script" uid="uid://ddlrjqwnck87y" path="res://Scripts/rigid_body_2d.gd" id="5_b83u4"]
-[ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="5_ll0et"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hblkt"]
-resource_local_to_scene = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll0et"]
-size = Vector2(1126, 116)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3lnup"]
-distance = -2.0
+[ext_resource type="PackedScene" uid="uid://b154j5rcla61x" path="res://Scenes/jugador.tscn" id="2_hblkt"]
+[ext_resource type="Texture2D" uid="uid://gm3dvfrkhsge" path="res://fotosPrueba1/AssetsAtrapaManzanas/bosque.png" id="2_sbygf"]
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_hblkt")
 
-[node name="Hombrelobo" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(523, 323)
-scale = Vector2(0.481445, 0.421875)
-texture = ExtResource("1_bpi8g")
+[node name="Bosque" type="Sprite2D" parent="."]
+position = Vector2(640, 363)
+texture = ExtResource("2_sbygf")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-visible = false
-offset_left = 468.0
-offset_top = 458.0
-offset_right = 700.0
-offset_bottom = 563.0
-
-[node name="Volver" type="Button" parent="VBoxContainer2"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-text = "Volver"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hblkt")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(572, 585)
-shape = SubResource("RectangleShape2D_ll0et")
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2(70, -239)
-scale = Vector2(0.975288, 1)
-texture = ExtResource("5_ll0et")
-polygon = PackedVector2Array(21.1469, 6, -349, 183, 12.2197, 291.469, 503.056, 286.795, 493.706, 13.329)
-uv = PackedVector2Array(14.557, 8.65439, 12.2197, 291.469, 503.056, 286.795, 493.706, 13.329)
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(95, 137)
-gravity_scale = 0.164
-script = ExtResource("5_b83u4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(136, 226)
-shape = SubResource("WorldBoundaryShape2D_3lnup")
-
-[node name="Apple" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
-position = Vector2(-83, -239)
-scale = Vector2(4.75, 7.5)
-texture = ExtResource("4_ubyp4")
-
-[connection signal="pressed" from="VBoxContainer2/Volver" to="." method="_on_volver_pressed"]
+[node name="Jugador" parent="." instance=ExtResource("2_hblkt")]
+position = Vector2(150, 440)
