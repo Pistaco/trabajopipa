@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_bpi8g"]
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_hblkt"]
-[ext_resource type="Script" uid="uid://pmrn8lcbxxpx" path="res://Scripts/character_body_2d.gd" id="3_sbygf"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="3_sbygf"]
 [ext_resource type="Texture2D" uid="uid://s65xh3tv66p1" path="res://fotosPrueba1/Rocky Roads/Objects/apple.png" id="4_ubyp4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hblkt"]

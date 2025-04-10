@@ -1,22 +1,87 @@
-[gd_scene load_steps=2 format=3 uid="uid://h6r8cgjiyp8"]
+[gd_scene load_steps=8 format=3 uid="uid://h6r8cgjiyp8"]
 
-[ext_resource type="Texture2D" uid="uid://dannefjtc7cup" path="res://fotosPrueba1/verdaderaforma.png" id="1_s5ayb"]
+[ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="1_n0ay1"]
+[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="2_dk80u"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="3_xnn4n"]
+[ext_resource type="Texture2D" uid="uid://s65xh3tv66p1" path="res://fotosPrueba1/Rocky Roads/Objects/apple.png" id="4_fr2pp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o2u3"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs8bs"]
+size = Vector2(74, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgjeg"]
+size = Vector2(1126, 116)
 
 [node name="Escena2" type="Node2D"]
-
-[node name="Verdaderaforma" type="Sprite2D" parent="."]
-position = Vector2(516, 344)
-scale = Vector2(0.597656, 0.612963)
-texture = ExtResource("1_s5ayb")
-
-[node name="Polygon2D" type="Polygon2D" parent="Verdaderaforma"]
-position = Vector2(-363.085, -32.6284)
-rotation = -0.380803
-scale = Vector2(1.33071, 1.65528)
-polygon = PackedVector2Array(20.0784, -6.5257, 21.7516, -8.1571, 614.065, 153.353, 85.3333, 358.912)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 239.0
 offset_top = 195.0
 offset_right = 279.0
 offset_bottom = 272.0
+
+[node name="Hombrelobo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(523, 323)
+scale = Vector2(0.481445, 0.421875)
+texture = ExtResource("2_dk80u")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 468.0
+offset_top = 458.0
+offset_right = 700.0
+offset_bottom = 563.0
+
+[node name="Volver" type="Button" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Volver"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2o2u3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(7, -114)
+disable_mode = 2
+script = ExtResource("3_xnn4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(238, 468)
+shape = SubResource("RectangleShape2D_cs8bs")
+
+[node name="Apple" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(205, 496)
+scale = Vector2(4.25, 6.15625)
+texture = ExtResource("4_fr2pp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(587, 614)
+shape = SubResource("RectangleShape2D_qgjeg")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6.10352e-05, -6.10352e-05)
+scale = Vector2(1, 1)
+gravity_space_override = 1
+gravity_point = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(352, -494)
+rotation = 0.615469
+scale = Vector2(0.78997, 1.43996)
+skew = 0.0174514
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/CollisionPolygon2D"]
+process_mode = 3
+position = Vector2(445.467, -53.5558)
+rotation = -0.290747
+scale = Vector2(1.46547, 0.903023)
+offset = Vector2(-324.014, -121.813)
+texture = ExtResource("1_n0ay1")
+polygon = PackedVector2Array(400, 40, 424, 56, 440, 72, 456, 104, 456, 152, 448, 176, 424, 200, 392, 208, 352, 208, 312, 208, 288, 192, 264, 176, 256, 144, 248, 112, 248, 80, 280, 56, 304, 40, 344, 32, 384, 32)
+uv = PackedVector2Array(432.564, 65.1646, 450.416, 93.3962, 459.805, 117.859, 461.656, 159.248, 439.045, 210.026, 419.276, 231.646, 382.581, 245.729, 344.961, 239.117, 302.646, 220.274, 260.332, 201.431, 242.48, 173.2, 224.629, 144.968, 231.24, 107.348, 237.852, 69.7277, 252.926, 35.876, 298.083, 25.5616, 331.009, 19.9415, 377.092, 30.3215, 419.407, 49.1645)
+polygons = [PackedInt32Array(6, 5, 4, 1), PackedInt32Array(0, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)]
