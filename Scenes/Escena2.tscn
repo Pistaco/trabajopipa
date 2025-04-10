@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://h6r8cgjiyp8"]
+
+[ext_resource type="Texture2D" uid="uid://dannefjtc7cup" path="res://fotosPrueba1/verdaderaforma.png" id="1_s5ayb"]
+
+[node name="Escena2" type="Node2D"]
+
+[node name="Verdaderaforma" type="Sprite2D" parent="."]
+position = Vector2(581.75, 326)
+scale = Vector2(0.597656, 0.612963)
+texture = ExtResource("1_s5ayb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 370.0
+offset_top = 287.0
+offset_right = 410.0
+offset_bottom = 364.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv7k4jg1c5ofm"]
+[gd_scene load_steps=8 format=3 uid="uid://dv7k4jg1c5ofm"]
 
 [ext_resource type="Script" uid="uid://cvolq4n0mj5dw" path="res://Scripts/menu_principal.gd" id="1_i1nop"]
 [ext_resource type="Texture2D" uid="uid://dvphyqodpudpw" path="res://fotosPrueba1/Verdadera Forma Logo.png" id="2_d7n5j"]
@@ -6,6 +6,8 @@
 [ext_resource type="StyleBox" uid="uid://dvgnmsib4sn2e" path="res://fonts/BotonPressed.tres" id="4_1odsn"]
 [ext_resource type="StyleBox" uid="uid://c21j1a40qc6gn" path="res://fonts/ColorBotones.tres" id="4_80gec"]
 [ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="6_1odsn"]
+
+[sub_resource type="Theme" id="Theme_1odsn"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -60,9 +62,11 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Jugar" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_1odsn")
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("3_d7n5j")
 theme_override_font_sizes/font_size = 60
