@@ -1,29 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv7k4jg1c5ofm"]
+[gd_scene load_steps=7 format=3 uid="uid://dv7k4jg1c5ofm"]
 
-[ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="1_3sc8a"]
+[ext_resource type="Script" uid="uid://cvolq4n0mj5dw" path="res://Scripts/menu_principal.gd" id="1_i1nop"]
+[ext_resource type="Texture2D" uid="uid://dvphyqodpudpw" path="res://fotosPrueba1/Verdadera Forma Logo.png" id="2_d7n5j"]
+[ext_resource type="FontFile" uid="uid://c62mqdpg7leya" path="res://fonts/Fonts/Kenney Pixel.ttf" id="3_d7n5j"]
+[ext_resource type="StyleBox" uid="uid://dvgnmsib4sn2e" path="res://fonts/BotonPressed.tres" id="4_1odsn"]
+[ext_resource type="StyleBox" uid="uid://c21j1a40qc6gn" path="res://fonts/ColorBotones.tres" id="4_80gec"]
+[ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="6_1odsn"]
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 239.0
+offset_top = 40.0
+offset_right = 239.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i1nop")
 
-[node name="Dall·e2025-03-2717_11_29-APowerfulWerewolfNamedFernandoStandsInADark,MistyForestUnderAFullMoon_HisThickFurIsDarkWithSilverStreaksOnHisBackAndFace,G" type="Sprite2D" parent="."]
-position = Vector2(580, 393)
-scale = Vector2(0.823242, 0.486328)
-texture = ExtResource("1_3sc8a")
+[node name="VerdaderaFormaLogo" type="Sprite2D" parent="."]
+position = Vector2(338.75, 285.25)
+scale = Vector2(1.19183, 1.17339)
+texture = ExtResource("2_d7n5j")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 169.0
+offset_right = 30.0
+offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.544918, 0.517616)
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1150, 650)
 layout_mode = 2
 
@@ -43,17 +59,59 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Jugar" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_d7n5j")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("4_1odsn")
+theme_override_styles/pressed = ExtResource("4_1odsn")
+theme_override_styles/normal = ExtResource("4_80gec")
 text = "Jugar"
 
-[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Asincronico" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_d7n5j")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("4_1odsn")
+theme_override_styles/pressed = ExtResource("4_1odsn")
+theme_override_styles/normal = ExtResource("4_80gec")
 text = "Asincronia"
 
-[node name="Button3" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+[node name="Configuracion" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_d7n5j")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("4_1odsn")
+theme_override_styles/pressed = ExtResource("4_1odsn")
+theme_override_styles/normal = ExtResource("4_80gec")
 text = "Configuracion"
+
+[node name="Salir" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_d7n5j")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("4_1odsn")
+theme_override_styles/pressed = ExtResource("4_1odsn")
+theme_override_styles/normal = ExtResource("4_80gec")
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1odsn")
+autoplay = true
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Asincronico" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Asincronico" to="." method="_on_asincronico_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Configuracion" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Salir" to="." method="_on_salir_pressed"]
