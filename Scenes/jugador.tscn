@@ -73,7 +73,6 @@ shape = SubResource("RectangleShape2D_hf4tf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_c2yei")
 animation = &"Iddle"
 speed_scale = 4.0

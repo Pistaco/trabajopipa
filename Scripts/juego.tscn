@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd40l4j7j1onf"]
+[gd_scene load_steps=7 format=3 uid="uid://cd40l4j7j1onf"]
 
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_hblkt"]
 [ext_resource type="PackedScene" uid="uid://b154j5rcla61x" path="res://Scenes/jugador.tscn" id="2_hblkt"]
 [ext_resource type="Texture2D" uid="uid://gm3dvfrkhsge" path="res://fotosPrueba1/AssetsAtrapaManzanas/bosque.png" id="2_sbygf"]
+[ext_resource type="PackedScene" uid="uid://cwjnun1tytdmm" path="res://Scenes/menu_pausa.tscn" id="5_b83u4"]
 [ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="5_ll0et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbygf"]
@@ -29,3 +30,7 @@ texture = ExtResource("5_ll0et")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(643, 640)
 shape = SubResource("RectangleShape2D_sbygf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_b83u4")]

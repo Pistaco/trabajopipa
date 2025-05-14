@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="1_n0ay1"]
 [ext_resource type="Texture2D" uid="uid://dj5b34lm1v86b" path="res://fotosPrueba1/hombrelobo.webp" id="2_dk80u"]
-[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="3_xnn4n"]
+[ext_resource type="Script" uid="uid://pmrn8lcbxxpx" path="res://Scripts/character_body_2d.gd" id="3_xnn4n"]
 [ext_resource type="Texture2D" uid="uid://s65xh3tv66p1" path="res://fotosPrueba1/Rocky Roads/Objects/apple.png" id="4_fr2pp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2o2u3"]
@@ -65,7 +65,6 @@ shape = SubResource("RectangleShape2D_qgjeg")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(6.10352e-05, -6.10352e-05)
-scale = Vector2(1, 1)
 gravity_space_override = 1
 gravity_point = true
 
