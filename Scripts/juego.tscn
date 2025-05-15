@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c7mkfxab57x27" path="res://Scenes/Enemigo.tscn" id="6_b83u4"]
 [ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="8_k4uls"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbygf"]
-size = Vector2(1296.5, 162)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lnup"]
+size = Vector2(811, 44.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lnup"]
 atlas = ExtResource("4_3lnup")
@@ -41,8 +41,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lnup"]
-size = Vector2(811, 44.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbygf"]
+size = Vector2(1296.5, 162)
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_hblkt")
@@ -52,11 +52,11 @@ position = Vector2(640, 363)
 texture = ExtResource("2_sbygf")
 
 [node name="Bosque" type="Sprite2D" parent="Bosque"]
-position = Vector2(1290, -1)
+position = Vector2(1272, -1)
 texture = ExtResource("2_sbygf")
 
 [node name="Bosque" type="Sprite2D" parent="Bosque/Bosque"]
-position = Vector2(1290, -1)
+position = Vector2(1249, -3)
 texture = ExtResource("2_sbygf")
 
 [node name="Bosque" type="Sprite2D" parent="Bosque/Bosque/Bosque"]
@@ -76,11 +76,56 @@ position = Vector2(94, -957)
 limit_top = 0
 limit_bottom = 2000
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Ajolote" type="Sprite2D" parent="StaticBody2D2"]
+modulate = Color(100, 100, 100, 1)
+visibility_layer = 32
+position = Vector2(2712, 845.625)
+scale = Vector2(10.0185, 1.49763)
+texture = ExtResource("5_ll0et")
+
+[node name="Ajolote" type="Sprite2D" parent="StaticBody2D2/Ajolote"]
+modulate = Color(100, 100, 100, 1)
+position = Vector2(1109.01, 1047.55)
+scale = Vector2(2.36969, 0.484227)
+texture = ExtResource("5_ll0et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1696, 533.25)
+shape = SubResource("RectangleShape2D_3lnup")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-336, 26.75)
+scale = Vector2(10.2818, 10.5892)
+sprite_frames = SubResource("SpriteFrames_x4qup")
+frame_progress = 0.480136
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
+texture_filter = 1
+position = Vector2(11.576, -0.0509644)
+scale = Vector2(0.886028, 1.01803)
+sprite_frames = SubResource("SpriteFrames_x4qup")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
+texture_filter = 1
+position = Vector2(22.439, -0.104165)
+scale = Vector2(0.90818, 0.977308)
+sprite_frames = SubResource("SpriteFrames_x4qup")
+frame_progress = 0.480136
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Ajolote" type="Sprite2D" parent="StaticBody2D"]
 modulate = Color(100, 100, 100, 1)
 position = Vector2(638, 636.75)
+scale = Vector2(2.36969, 0.484227)
+texture = ExtResource("5_ll0et")
+
+[node name="Ajolote" type="Sprite2D" parent="StaticBody2D/Ajolote"]
+modulate = Color(100, 100, 100, 1)
+position = Vector2(1109.01, 1047.55)
 scale = Vector2(2.36969, 0.484227)
 texture = ExtResource("5_ll0et")
 
@@ -134,32 +179,6 @@ scale = Vector2(0.886028, 1.01803)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D/AnimatedSprite2D2"]
-texture_filter = 1
-position = Vector2(22.439, -0.104165)
-scale = Vector2(0.90818, 0.977308)
-sprite_frames = SubResource("SpriteFrames_x4qup")
-frame_progress = 0.480136
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1696, 533.25)
-shape = SubResource("RectangleShape2D_3lnup")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D"]
-texture_filter = 1
-position = Vector2(-336, 26.75)
-scale = Vector2(10.2818, 10.5892)
-sprite_frames = SubResource("SpriteFrames_x4qup")
-frame_progress = 0.480136
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
-texture_filter = 1
-position = Vector2(11.576, -0.0509644)
-scale = Vector2(0.886028, 1.01803)
-sprite_frames = SubResource("SpriteFrames_x4qup")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
 texture_filter = 1
 position = Vector2(22.439, -0.104165)
 scale = Vector2(0.90818, 0.977308)
