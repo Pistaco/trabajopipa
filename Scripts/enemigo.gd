@@ -55,22 +55,24 @@ func detectar_obstaculos() -> bool:
 	query.exclude = [self]
 	return space_state.intersect_ray(query).has("collider")
 
+
 func actualizar_apariencia():
-	# Girar sprite horizontalmente
+	# Voltear horizontalmente
 	if velocidad.x != 0:
 		sprite.flip_h = velocidad.x < 0
 	
-	# Pequeña inclinación al volar
-	rotation = lerp(rotation, velocidad.x * 0.03, 0.1)
+	# Pequeño efecto de "flotación" (opcional)
 	
-	# Cambiar animación basada en velocidad
+	
+	# Mantener rotación vertica
+	rotation = 0
+	
+	# Animaciones
 	if velocidad.length() < 10:
 		sprite.play("reposo")
-	elif not sprite.animation == "volar":
+	else:
 		sprite.play("volar")
-
-	
-
+		
 
 func _on_colision_jugador_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugador"):
