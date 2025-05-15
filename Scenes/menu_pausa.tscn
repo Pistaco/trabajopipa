@@ -78,6 +78,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -27.0
+offset_right = -27.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dldy")
@@ -92,20 +96,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+show_behind_parent = true
+top_level = true
 visibility_layer = 0
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.369
-anchor_top = 0.335
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -533.32
-offset_top = -255.2
-offset_right = -577.0
-offset_bottom = -273.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = -0.0046875
+anchor_top = -0.00972222
+anchor_right = -0.0046875
+anchor_bottom = -0.00972222
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 107.0
 scale = Vector2(4.7406, 4.19502)
+focus_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 top_level = true
@@ -118,16 +124,21 @@ layout_mode = 2
 texture = ExtResource("3_pq2yk")
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 2.955
+offset_left = -21.0
+offset_top = -2.0
+offset_right = 27.0
+offset_bottom = 8.75998
 
 [node name="Continuar" type="Button" parent="PanelContainer/VBoxContainer/TextureRect/Label"]
 layout_mode = 2
-offset_left = -5.48454
-offset_top = 45.1726
-offset_right = 378.515
-offset_bottom = 76.1726
+offset_left = 7.0
+offset_top = 48.0
+offset_right = 391.0
+offset_bottom = 79.0
 text = "Continuar"
 flat = true
 
@@ -142,10 +153,10 @@ offset_bottom = 23.0
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer/TextureRect2/Label"]
 layout_mode = 2
-offset_left = -10.3362
-offset_top = 48.3329
-offset_right = 373.664
-offset_bottom = 79.3329
+offset_left = 51.0
+offset_top = 47.0
+offset_right = 341.0
+offset_bottom = 78.0
 text = "Restart"
 
 [node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer"]
@@ -159,11 +170,14 @@ offset_bottom = 23.0
 
 [node name="Salir" type="Button" parent="PanelContainer/VBoxContainer/TextureRect3/Label"]
 layout_mode = 2
-offset_left = -12.6566
-offset_top = 48.3942
-offset_right = 371.343
-offset_bottom = 79.3942
+offset_left = 65.0
+offset_top = 48.0
+offset_right = 316.0
+offset_bottom = 79.0
 text = "Salir"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
