@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://h6r8cgjiyp8"]
+[gd_scene load_steps=16 format=3 uid="uid://h6r8cgjiyp8"]
 
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_2gloq"]
 [ext_resource type="Texture2D" uid="uid://gm3dvfrkhsge" path="res://fotosPrueba1/AssetsAtrapaManzanas/bosque.png" id="2_3l8v7"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="4_hjnv8"]
 [ext_resource type="Texture2D" uid="uid://cbr7l3rflfxa8" path="res://fotosPrueba1/brackeys_platformer_assets/sprites/platforms.png" id="5_ryyok"]
 [ext_resource type="PackedScene" uid="uid://cwjnun1tytdmm" path="res://Scenes/menu_pausa.tscn" id="6_a7yfb"]
+[ext_resource type="Texture2D" uid="uid://c1iix6oa5s5bb" path="res://PIPA Verdadera Forma/plataform512.png" id="6_ta02p"]
 [ext_resource type="PackedScene" uid="uid://c7mkfxab57x27" path="res://Scenes/Enemigo.tscn" id="7_yd140"]
+[ext_resource type="Texture2D" uid="uid://cvk3jl2l85fvk" path="res://PIPA Verdadera Forma/plataform128.png" id="7_ykg05"]
 [ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="8_qjpul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lnup"]
@@ -114,7 +116,7 @@ frame_progress = 0.480136
 modulate = Color(100, 100, 100, 1)
 position = Vector2(638, 636.75)
 scale = Vector2(2.36969, 0.484227)
-texture = ExtResource("4_hjnv8")
+texture = ExtResource("6_ta02p")
 
 [node name="Ajolote" type="Sprite2D" parent="StaticBody2D/Ajolote"]
 modulate = Color(100, 100, 100, 1)
@@ -125,6 +127,11 @@ texture = ExtResource("4_hjnv8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(642, 639)
 shape = SubResource("RectangleShape2D_sbygf")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-221, -143)
+scale = Vector2(1.59375, 1.95313)
+texture = ExtResource("7_ykg05")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 texture_filter = 1
@@ -184,10 +191,6 @@ frame_progress = 0.480136
 process_mode = 3
 
 [node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("6_a7yfb")]
-offset_left = -2.0
-offset_top = 5.0
-offset_right = -2.0
-offset_bottom = 5.0
 
 [node name="Enemigo" parent="." instance=ExtResource("7_yd140")]
 position = Vector2(1025, 438)
