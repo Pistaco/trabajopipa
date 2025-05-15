@@ -237,6 +237,7 @@ visible = false
 [node name="Rayos" type="Node2D" parent="."]
 
 [node name="RayoSpawn" type="Timer" parent="Rayos"]
+autostart = true
 
 [node name="Rayo" type="Area2D" parent="Rayos"]
 script = ExtResource("2_lsi32")
