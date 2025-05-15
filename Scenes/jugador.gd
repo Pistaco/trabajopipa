@@ -23,7 +23,7 @@ func _physics_process(delta):
 	if saltar !=0 and is_on_floor():
 		velocity.y =0
 		velocity.y -= saltar * 2000
-
+		
 	
 	if !is_on_floor():
 		velocity.y += 100
