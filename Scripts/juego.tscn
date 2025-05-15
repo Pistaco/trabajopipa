@@ -190,6 +190,7 @@ sprite_frames = SubResource("SpriteFrames_x4qup")
 frame_progress = 0.480136
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(111, 94)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
@@ -203,7 +204,6 @@ texture = ExtResource("5_ll0et")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_b83u4")]
 offset_left = -2.0
@@ -220,4 +220,4 @@ volume_db = -5.433
 autoplay = true
 
 [node name="Moon" parent="." instance=ExtResource("9_apw7y")]
-position = Vector2(692, -260)
+position = Vector2(634, -63)

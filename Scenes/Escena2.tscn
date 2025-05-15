@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm2o0yq1mwuhb"]
+[gd_scene load_steps=14 format=3 uid="uid://h6r8cgjiyp8"]
 
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_2gloq"]
 [ext_resource type="Texture2D" uid="uid://gm3dvfrkhsge" path="res://fotosPrueba1/AssetsAtrapaManzanas/bosque.png" id="2_3l8v7"]
