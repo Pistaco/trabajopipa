@@ -187,7 +187,6 @@ frame_progress = 0.480136
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_b83u4")]
 offset_left = -2.0
