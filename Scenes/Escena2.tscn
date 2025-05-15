@@ -128,11 +128,6 @@ texture = ExtResource("4_hjnv8")
 position = Vector2(642, 639)
 shape = SubResource("RectangleShape2D_sbygf")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2(-221, -143)
-scale = Vector2(1.59375, 1.95313)
-texture = ExtResource("7_ykg05")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 texture_filter = 1
 position = Vector2(60, 610)
@@ -186,6 +181,11 @@ position = Vector2(1166, 606.97)
 scale = Vector2(17.0394, 9.65993)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 frame_progress = 0.480136
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(413, 488)
+scale = Vector2(1.59375, 1.95313)
+texture = ExtResource("7_ykg05")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
