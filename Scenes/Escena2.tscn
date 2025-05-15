@@ -95,16 +95,16 @@ scale = Vector2(10.2818, 10.5892)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 frame_progress = 0.480136
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(11.576, -0.0509644)
-scale = Vector2(0.886028, 1.01803)
+position = Vector2(-216.978, 26.2103)
+scale = Vector2(9.10996, 10.7801)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D/AnimatedSprite2D2"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="StaticBody2D2/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(21.9806, -0.0944355)
-scale = Vector2(0.90818, 0.977308)
+position = Vector2(-110, 25.75)
+scale = Vector2(9.33773, 10.3489)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 frame_progress = 0.480136
 
@@ -131,6 +131,8 @@ texture_filter = 1
 position = Vector2(60, 610)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_x4qup")
+frame = 1
+frame_progress = 0.290697
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D"]
 texture_filter = 1

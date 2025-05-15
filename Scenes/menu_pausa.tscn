@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwjnun1tytdmm"]
+[gd_scene load_steps=9 format=3 uid="uid://cwjnun1tytdmm"]
 
 [ext_resource type="Script" uid="uid://cmghae80vdcu4" path="res://Scripts/menu_pausa.gd" id="1_7dldy"]
 [ext_resource type="Shader" uid="uid://bf6q7j4kt1yux" path="res://fonts/Menu.gdshader" id="2_pq2yk"]
+[ext_resource type="Texture2D" uid="uid://dh2aa6puaip6t" path="res://PIPA Verdadera Forma/button.png" id="3_pq2yk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mumad"]
 shader = ExtResource("2_pq2yk")
@@ -91,33 +92,77 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visibility_layer = 0
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.335
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -168.0
-offset_right = -170.0
-offset_bottom = -67.0
+offset_left = -533.32
+offset_top = -255.2
+offset_right = -577.0
+offset_bottom = -273.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4.7406, 4.19502)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+top_level = true
+light_mask = 0
 layout_mode = 2
+alignment = 1
 
-[node name="Continuar" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+texture = ExtResource("3_pq2yk")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Continuar" type="Button" parent="PanelContainer/VBoxContainer/TextureRect/Label"]
+layout_mode = 2
+offset_left = -5.48454
+offset_top = 45.1726
+offset_right = 378.515
+offset_bottom = 76.1726
 text = "Continuar"
+flat = true
 
-[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+texture = ExtResource("3_pq2yk")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer/TextureRect2/Label"]
+layout_mode = 2
+offset_left = -10.3362
+offset_top = 48.3329
+offset_right = 373.664
+offset_bottom = 79.3329
 text = "Restart"
 
-[node name="Salir" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+texture = ExtResource("3_pq2yk")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Salir" type="Button" parent="PanelContainer/VBoxContainer/TextureRect3/Label"]
+layout_mode = 2
+offset_left = -12.6566
+offset_top = 48.3942
+offset_right = 371.343
+offset_bottom = 79.3942
 text = "Salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -126,6 +171,6 @@ libraries = {
 }
 script = SubResource("GDScript_g3qh8")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Salir" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TextureRect/Label/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TextureRect2/Label/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TextureRect3/Label/Salir" to="." method="_on_menu_principal_pressed"]
