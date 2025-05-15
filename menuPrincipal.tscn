@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv7k4jg1c5ofm"]
+[gd_scene load_steps=10 format=3 uid="uid://dv7k4jg1c5ofm"]
 
 [ext_resource type="Script" uid="uid://cvolq4n0mj5dw" path="res://Scripts/menu_principal.gd" id="1_i1nop"]
 [ext_resource type="Texture2D" uid="uid://bqympsgavtk1y" path="res://PIPA Verdadera Forma/MainMenuBackground2.png" id="2_1odsn"]
@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://c21j1a40qc6gn" path="res://fonts/ColorBotones.tres" id="4_80gec"]
 [ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="6_1odsn"]
 [ext_resource type="Texture2D" uid="uid://dh2aa6puaip6t" path="res://PIPA Verdadera Forma/button.png" id="6_gl783"]
+[ext_resource type="Texture2D" uid="uid://dkyvdktchqngx" path="res://PIPA Verdadera Forma/main title.png" id="8_yrsm4"]
 
 [sub_resource type="Theme" id="Theme_1odsn"]
 
@@ -215,6 +216,11 @@ flat = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1odsn")
 autoplay = true
+
+[node name="MainTitle" type="Sprite2D" parent="."]
+position = Vector2(397, 342)
+scale = Vector2(0.627083, 0.721296)
+texture = ExtResource("8_yrsm4")
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer2/Jugar" to="." method="_on_jugar_pressed"]

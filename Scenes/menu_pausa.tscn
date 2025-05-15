@@ -128,7 +128,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Continuar" type="Button" parent="VBoxContainer/TextureRect2/Label2"]
+[node name="restart" type="Button" parent="VBoxContainer/TextureRect2/Label2"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -136,7 +136,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Restar"
+text = "Restart"
 flat = true
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
@@ -152,7 +152,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Continuar" type="Button" parent="VBoxContainer/TextureRect3/Label3"]
+[node name="MenuPrincipal" type="Button" parent="VBoxContainer/TextureRect3/Label3"]
 layout_mode = 2
 offset_left = -7.0
 offset_top = 43.0
@@ -162,5 +162,5 @@ text = "Salir"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/TextureRect/Label/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="VBoxContainer/TextureRect2/Label2/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="VBoxContainer/TextureRect3/Label3/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureRect2/Label2/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureRect3/Label3/MenuPrincipal" to="." method="_on_menu_principal_pressed"]
