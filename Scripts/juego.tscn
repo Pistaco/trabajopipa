@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cd40l4j7j1onf"]
+[gd_scene load_steps=17 format=3 uid="uid://cd40l4j7j1onf"]
 
 [ext_resource type="Script" uid="uid://dour2elyxnqdv" path="res://Scripts/juego.gd" id="1_hblkt"]
 [ext_resource type="PackedScene" uid="uid://b154j5rcla61x" path="res://Scenes/jugador.tscn" id="2_hblkt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bb8w8k8btteis" path="res://fotosPrueba1/ajolote.png" id="5_ll0et"]
 [ext_resource type="PackedScene" uid="uid://c7mkfxab57x27" path="res://Scenes/Enemigo.tscn" id="6_b83u4"]
 [ext_resource type="AudioStream" uid="uid://cctmyfjllvv3h" path="res://Sound/Music/y2mate.com - LOrbrie.mp3" id="8_k4uls"]
+[ext_resource type="PackedScene" uid="uid://dekfej2mci4ub" path="res://Scenes/moon.tscn" id="9_apw7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lnup"]
 size = Vector2(811, 44.5)
@@ -43,6 +44,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbygf"]
 size = Vector2(1296.5, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apw7y"]
+size = Vector2(465, 138)
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_hblkt")
@@ -185,8 +189,21 @@ scale = Vector2(0.90818, 0.977308)
 sprite_frames = SubResource("SpriteFrames_x4qup")
 frame_progress = 0.480136
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(111, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(686, 186)
+shape = SubResource("RectangleShape2D_apw7y")
+
+[node name="Ajolote" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(689.625, 183)
+scale = Vector2(0.851664, 0.440063)
+texture = ExtResource("5_ll0et")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_b83u4")]
 offset_left = -2.0
@@ -201,3 +218,6 @@ position = Vector2(1025, 438)
 stream = ExtResource("8_k4uls")
 volume_db = -5.433
 autoplay = true
+
+[node name="Moon" parent="." instance=ExtResource("9_apw7y")]
+position = Vector2(692, -260)
