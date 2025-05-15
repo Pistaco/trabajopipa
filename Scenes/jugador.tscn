@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b154j5rcla61x"]
 
-[ext_resource type="Script" path="res://Scenes/jugador.gd" id="1_oua2g"]
+[ext_resource type="Script" uid="uid://c8y5d52uvufop" path="res://Scenes/jugador.gd" id="1_oua2g"]
 [ext_resource type="Texture2D" uid="uid://csfwbjq1kt7h2" path="res://fotosPrueba1/AssetsAtrapaManzanas/Jugador/idle/player-idle-1.png" id="1_x1a6r"]
 [ext_resource type="Texture2D" uid="uid://vdmp8bjq0dur" path="res://fotosPrueba1/AssetsAtrapaManzanas/Jugador/idle/player-idle-2.png" id="2_oua2g"]
 [ext_resource type="Texture2D" uid="uid://cc1am7vtn5lav" path="res://fotosPrueba1/AssetsAtrapaManzanas/Jugador/idle/player-idle-3.png" id="3_mb44e"]
