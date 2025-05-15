@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
+var is_hidden: bool = false
+var health: int = 3
+
+
+
 func _ready():
 	pass
 	
 func _process(delta):
+	check_shelter()
 	pass
 
 func _input(event):
@@ -11,7 +17,31 @@ func _input(event):
 	
 func _init():
 	pass
+
+func check_shelter():
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(
+		global_position,
+		global_position + Vector2.UP * 100  # Ajusta según el tamaño de tu personaje
+	)
+	var result = space_state.intersect_ray(query)
+	is_hidden = result.has("collider") and result.collider.is_in_group("shelter")
 	
+	
+	
+func take_damage(amount: int):
+	if !is_hidden:
+		health -= amount
+		$AnimationPlayer.play("hurt")
+		if health <= 0:
+			die()
+
+func die():
+	# Lógica de muerte
+	queue_free()
+	
+	
+
 var speed := 400
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
